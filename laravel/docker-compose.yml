@@ -5,7 +5,7 @@ services:
     build: .
     container_name: app
     volumes:
-      - C:\ProjetosWilliam\projetosLocais\jornada\iml\laravel:/var/www
+      - .:/var/www
     networks: 
       - app-network
     depends_on:
@@ -19,7 +19,7 @@ services:
     ports:
       - "8000:80"
     volumes:
-      - C:\ProjetosWilliam\projetosLocais\jornada\iml\laravel:/var/www
+      - .:/var/www
     networks: 
       - app-network
 
@@ -36,7 +36,7 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - MYSQL_USER=root
     volumes:
-      - C:\ProjetosWilliam\projetosLocais\jornada\iml\laravel\.docker\dbdata:/var/lib/mysql
+      - .\.docker\dbdata:/var/lib/mysql
     networks: 
       - app-network
     healthcheck:

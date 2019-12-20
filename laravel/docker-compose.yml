@@ -4,7 +4,7 @@ services:
   app:
     build: .
     container_name: app
-    entrypoint: dockerize -wait tcp://db:3306 -timeout 40s ./.docker/entrypoint.sh
+    entrypoint: dockerize -wait tcp://db:3306 -timeout 60s ./.docker/entrypoint.sh
     volumes:
       - .:/var/www
     networks: 
@@ -42,7 +42,7 @@ services:
       - app-network
     healthcheck:
       test: ["CMD", "mysqladmin" ,"ping", "-h", "localhost"]
-      interval: 10s
+      interval: 15s
       retries: 4
 
   redis:

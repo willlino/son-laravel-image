@@ -17,12 +17,15 @@ services:
     container_name: nginx
     restart: always
     tty: true
+    entrypoint: dockerize -wait tcp://app:9000 -timeout 120s ./entrypoint.sh
     ports:
       - "8000:80"
     volumes:
       - .:/var/www
     networks: 
       - app-network
+    depends_on:
+      - app
 
   db:
     image: mysql:5.7

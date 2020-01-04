@@ -10,25 +10,11 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 WORKDIR /var/www
 RUN rm -rf /var/www/html
 
-# install composer
 RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
 
-
-# WORKDIR /var/www/laravel
-
-
-# COPY . /var/www
-# RUN composer install
-# RUN cp .env.example .env
-# RUN php artisan key:generate
-# RUN php artisan config:cache
-# RUN php artisan migrate 
-
-
-# COPY laravel /var/www
 RUN ln -s public html
 
 WORKDIR /var/www
 
 EXPOSE 9000
-# ENTRYPOINT ["php-fpm"]
+

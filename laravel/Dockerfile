@@ -1,5 +1,5 @@
 FROM php:7.4.0RC6-fpm-alpine3.10
-RUN apk add --no-cache openssl bash mysql-client
+RUN apk add --no-cache openssl bash mysql-client shadow
 RUN docker-php-ext-install pdo pdo_mysql
 
 ENV DOCKERIZE_VERSION v0.6.1
@@ -15,6 +15,8 @@ RUN curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local
 RUN ln -s public html
 
 WORKDIR /var/www
+
+RUN usermod -u 1000 www-data
 
 EXPOSE 9000
 

@@ -6,5 +6,5 @@ php artisan key:generate
 php artisan config:cache
 php artisan migrate
 chmod 775 -R storage
-grep APP_KEY .env
+# grep APP_KEY .env
 php-fpm

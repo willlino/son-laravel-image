@@ -22,9 +22,12 @@ services:
     container_name: nginx
     restart: always
     tty: true
-    entrypoint: dockerize -wait tcp://app:9000 -timeout 1000s ./entrypoint.sh
+    entrypoint: dockerize -template /etc/nginx/conf.d/nginx.conf.template:/etc/nginx/conf.d/nginx.conf -wait tcp://app:9000 -timeout 1000s ./entrypoint.sh
     ports:
       - "8000:80"
+    environment: 
+      - NGINX_HOST=app
+      - NGINX_PORT=9000
     volumes:
       - .:/var/www
     networks: 

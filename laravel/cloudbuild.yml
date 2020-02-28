@@ -9,4 +9,4 @@ steps:
 
   - id: "Rodando docker o compose"
     name: 'gcr.io/cloud-builders/docker'
-    args: ['exec', '-t', 'composer', 'install']
+    args: ['exec', '-t', 'app', 'composer', 'install']

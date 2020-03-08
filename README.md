@@ -2,4 +2,4 @@
 Exercício da School of Net para criação de uma imagem laravel
 
 
-Link do dockerhub da imagem principal(php-fpm): https://hub.docker.com/repository/docker/willlino/son-php-fpm 
+Link do dockerhub da imagem principal(php-fpm): https://hub.docker.com/repository/docker/willlino/son-php-fpm  
